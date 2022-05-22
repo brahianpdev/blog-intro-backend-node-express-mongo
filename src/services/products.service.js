@@ -1,4 +1,4 @@
-const productRepository = require('../repositories/product-repository');
+const productRepository = require('../repositories/product.repository');
 
 class PostService {
   async findAll() {
