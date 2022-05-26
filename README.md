@@ -13,71 +13,6 @@ Esta es una guía de introducción para quienes deseen comenzar con estas tecnol
 - [MongoDB](https://www.mongodb.com/)
 - [Postman](https://www.postman.com/)
 
-# Export functions vs export Class
-
-El pensar en un backend con export functions, supone una carga innecesaria de exportaciones e importaciones. Por otro lado, al usar clases bastaria solo una exportación e importación de la misma para tener acceso a todos sus métodos.
-
-Veamos un ejemplo con funciones:
-
-```jsx
-// **export functions**
-function SayHello () {
-    console.log("Hello");
-}
-
-function SayBye () {
-    console.log("Bye");
-}
-
-module.exports = { SayHello, SayBye };
-```
-
-```jsx
-// **import functions**
-const { SayHello, SayBye } = require('./export-function');
-
-SayHello();
-SayBye();
-```
-
-Ahora veamos un ejemplo con clases:
-
-```jsx
-// **export class**
-class Say {
-    async hello () {
-        console.log("Hello");
-    }
-
-    async bye () {
-        console.log("Bye");
-    }
-}
-
-module.exports = new Say();
-```
-
-```jsx
-// **import class**
-const sayClass = require('./export-class');
-
-sayClass.hello();
-sayClass.bye();
-```
-
-*Si ejecutamos respectivos archivos en nuestra consola, obtendremos el mismo resultado.*
-
-```powershell
-node import-function
-Hello
-Bye
-```
-```powershell
-node import-class
-Hello
-Bye
-```
-
 # Estructura a seguir
 
 ```markdown
@@ -99,6 +34,10 @@ Una empresa está creciendo, y necesita un sistema donde pueda tener un registro
 
 En otras palabras, se pide crear un CRUD de productos con sus respectivos endpoints.
 
-# **Conclusion**
+# Resolucion
+
+En el **[blog](https://brahianpdev.rocks/)** está la resolución paso a paso, desde la creación de la base de datos hasta la construcción y test de los endpoints correspondientes.
 
 # Agradecimientos
+
+Un especial agradecimiento a [Scorpion](https://www.linkedin.com/in/perez-alan/) y [Franco ](https://www.linkedin.com/in/francogrecco/), que siempre están ofreciendo su ayuda.
