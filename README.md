@@ -36,7 +36,7 @@ En otras palabras, se pide crear un CRUD de productos con sus respectivos endpoi
 
 # Resolucion
 
-En el **[blog](https://brahianpdev.rocks/)** está la resolución paso a paso, desde la creación de la base de datos hasta la construcción y test de los endpoints correspondientes.
+En el **[blog](https://brahianpdev.rocks/introduccin-al-backend-con-node-express-y-mongodb)** está la resolución paso a paso, desde la creación de la base de datos hasta la construcción y test de los endpoints correspondientes.
 
 # Agradecimientos
 
