@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const config = require('./config');
+const cronService = require("./services/cron.service");
 const indexRoutes = require('./routes');
 
 mongoose
@@ -20,8 +21,10 @@ mongoose
     app.use(express.json());
 
     app.use(cors());
-
+  
     app.use("/", indexRoutes);
+
+    cronService.syncAllDays();
 
     app.listen(config.app.port, () => {
       console.log(`🔥 Server is running at port ${config.app.port}`);
