@@ -1,17 +1,18 @@
 const ftp = require("basic-ftp");
 
-const config = require("../config");
-const localPath = './src/ftp-files/testing.md';
-const remotePath = 'testing.md';
-
 class FtpService {
-    constructor() {
+    constructor(config) {
+
+        this.credentials = config.credentials;
+        this.localPath = config.localPath;
+        this.remotePath = config.remotePath;
+
         this.client = new ftp.Client();
     }
 
-    async connect() {
+    async run() {
         this.client.ftp.verbose = true;
-        await this.client.access(config.ftp);
+        await this.client.access(this.credentials);
         console.log('Connected to FTP');
 
         await this.download();
@@ -19,8 +20,8 @@ class FtpService {
     }
 
     async download() {
-        await this.client.downloadTo(localPath, remotePath);
-        console.log('Downloaded testing.md from FTP');
+        await this.client.downloadTo(this.localPath, this.remotePath);
+        console.log('Downloaded file from FTP');
     }
 
     async disconnect() {
@@ -29,4 +30,4 @@ class FtpService {
     }
 }
 
-module.exports = new FtpService();
+module.exports = FtpService;
