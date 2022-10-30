@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const routes = Router();
 
-const productsController = require("../controllers/products.controller");
+const productsController = require("./products.controller");
 
 routes.get("/", productsController.findAll);
 routes.get("/:id", productsController.findById);

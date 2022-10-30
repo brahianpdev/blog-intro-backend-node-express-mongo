@@ -1,4 +1,4 @@
-const productRepository = require('../repositories/product.repository');
+const productRepository = require("./product.repository");
 
 class PostService {
   async findAll() {
@@ -8,7 +8,7 @@ class PostService {
       throw new Error(error);
     }
   }
-  
+
   async findById(id) {
     try {
       return await productRepository.findById(id);
